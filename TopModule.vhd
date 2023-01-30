@@ -37,7 +37,7 @@ architecture Behavioral of TopModule is
       port (
 	     Clock  : in STD_LOGIC;
 	     Reset  : in STD_LOGIC;
-	     CE     : in  STD_LOGIC;
+	     CE     : in STD_LOGIC;
 	     CoutA  : out STD_LOGIC_VECTOR(3 downto 0)
            );
    end component;
