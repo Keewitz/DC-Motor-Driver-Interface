@@ -6,27 +6,28 @@ entity ClockDivider is
    Port ( 
 	  Clock       : in STD_LOGIC;
 	  Reset       : in STD_LOGIC;
-	  ClockDivOut : out STD_LOGIC);
+	  ClockDivOut : out STD_LOGIC
+   	);
 end ClockDivider;
 
 architecture Behavioral of ClockDivider is
-   signal counter : integer:= 1;
-   signal tmp : STD_LOGIC:= '0';
+   signal s_Counter : integer;
+   signal tmp : STD_LOGIC;
 
 begin
 
 process(Clock, Reset)
    begin
-      if(Reset = '1') then
-	 counter <= 1;
+      if(Reset = '0') then
+	 s_Counter <= 1;
 	 tmp <= '0';
       elsif(Clock'event and Clock ='1') then
-	 counter <= counter + 1;
-      if (counter = 2000) then 
+	 s_Counter <= s_Counter + 1;
+      if (s_counter = 2000) then 
 	 tmp <= NOT tmp;
-      elsif(counter = 4000) then
+      elsif(s_Counter = 4000) then
 	 tmp <= NOT tmp;
-	 counter <= 1;
+	 s_Counter <= 1;
       end if;	
    end if;
 	
