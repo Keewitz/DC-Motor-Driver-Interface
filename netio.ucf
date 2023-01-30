@@ -1,8 +1,21 @@
-NET  "Clock"   	LOC = "P38";
-NET  "Clock"   	BUFG = CLK;
+##########
+# CLOCKS #
+##########
 
-NET "Button"   	LOC = "P94";
-NET "Reset"    	LOC = "P143";
+NET  "Clock"      LOC = "P38";
+NET  "Clock"      BUFG = CLK;
+#NET "Clock"      COOL_CLK;
 
-NET "CompOut"  	LOC = "P6";
-NET "Direction" LOC = "P9";
+#########################
+# ON-BOARD PUSH BUTTONS #
+#########################
+
+NET "Button"      LOC = "P94";
+NET "Reset"       LOC = "P143";
+
+##
+## Pmod 1
+##
+
+NET "CompOut"			LOC = "P6";
+NET "Direction"		LOC = "P9";
