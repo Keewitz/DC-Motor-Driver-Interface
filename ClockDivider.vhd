@@ -11,6 +11,7 @@ entity ClockDivider is
 end ClockDivider;
 
 architecture Behavioral of ClockDivider is
+   
    signal s_Counter : integer;
    signal tmp : STD_LOGIC;
 
@@ -23,7 +24,7 @@ process(Clock, Reset)
 	 tmp <= '0';
       elsif(Clock'event and Clock ='1') then
 	 s_Counter <= s_Counter + 1;
-      if (s_counter = 2000) then 
+      if (s_Counter = 2000) then 
 	 tmp <= NOT tmp;
       elsif(s_Counter = 4000) then
 	 tmp <= NOT tmp;
