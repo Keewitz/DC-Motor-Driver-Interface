@@ -17,5 +17,5 @@ NET "Reset"       LOC = "P143";
 ## Pmod 1
 ##
 
-NET "CompOut"			LOC = "P6";
+NET "CompOut"		  LOC = "P6";
 NET "Direction"		LOC = "P9";
