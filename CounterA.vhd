@@ -14,20 +14,22 @@ entity CounterA is
 end CounterA;
 
 architecture Behavioral of CounterA is
-   signal s_CountUp: std_logic_vector(3 downto 0);
+   signal s_CounterA : STD_LOGIC_VECTOR(3 downto 0);
 	
 begin -- Up Counter
    process(Clock, Reset) is
       begin
-	if (Reset = '1') then
-	    s_CountUp <= "0000";
-	       elsif(rising_edge(Clock)) then
+	if (Reset = '0') then
+	    s_CounterA <= "0000";
+	       else
+	         if(rising_edge(Clock)) then
 	       if(CE='1') then
-	    s_CountUp <= s_CountUp + "1";
+	    s_CounterA <= s_CounterA + "1";
 	 end if;
       end if;
+   end if;
 end process;
 
-CoutA <= s_CountUp;
+CoutA <= s_CounterA;
 
 end Behavioral;
