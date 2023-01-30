@@ -13,22 +13,22 @@ entity CounterB is
 end CounterB;
 
 architecture Behavioral of CounterB is
-   signal s_CountUp: std_logic_vector(3 downto 0);
+   signal s_CounterB: STD_LOGIC_VECTOR(3 downto 0);
 	
 begin -- Up Counter
    process(Clock, Reset) is
       begin
-	 if (Reset = '1') then
+	 if (Reset = '0') then
 	     s_CountUp <= "0000";
 		elsif(rising_edge(Clock)) then
-		   if(s_CountUp="1111") then
-		s_CountUp <= "0000";
+		   if(s_CounterB="1111") then
+		s_CounterB <= "0000";
 	     else
-	  s_CountUp <= s_CountUp + "1";
+	  s_CounterB <= s_CounterB + "1";
         end if;
     end if;
 end process;
 
-CoutB <= s_CountUp;
+CoutB <= s_CounterB;
 
 end Behavioral;
