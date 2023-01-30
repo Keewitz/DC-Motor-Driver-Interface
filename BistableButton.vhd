@@ -12,7 +12,10 @@ end BistableButton;
 
 architecture Behavioral of BistableButton is
 
-   type btn_state is (st_released, st_pressed);
+   type btn_state is (
+	   	       st_released, st_pressed
+		     );
+	
    signal state_i, next_state_i : btn_state := st_released;
 
 begin
@@ -20,7 +23,7 @@ begin
 sync : process(Reset, Clock)
 
 begin
-  if (Reset = '1') then
+  if (Reset = '0') then
      state_i <= st_released;
   elsif rising_edge(Clock) then
      state_i <= next_state_i;
